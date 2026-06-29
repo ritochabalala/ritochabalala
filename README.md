@@ -91,8 +91,9 @@ I design, build, and deploy **AI-driven full-stack solutions** in enterprise env
 
 ## 📊 GitHub
 
-![Rito's GitHub stats](https://github-readme-stats.vercel.app/api?username=ritochabalala&show_icons=true&hide_border=true&theme=default)
-![Top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ritochabalala&layout=compact&hide_border=true&theme=default)
+![Rito's GitHub metrics](./metrics.svg)
+
+> Generated nightly by [`lowlighter/metrics`](https://github.com/lowlighter/metrics) — includes private contributions and all-time commits.
 
 ---
 

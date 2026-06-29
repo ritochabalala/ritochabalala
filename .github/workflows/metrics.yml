@@ -1,0 +1,58 @@
+name: Generate profile metrics
+
+on:
+    # Run nightly so the SVG stays fresh
+    schedule:
+        - cron: '0 2 * * *'
+    # Allow manual trigger from the Actions tab
+    workflow_dispatch:
+    # Re-render on changes to this workflow file
+    push:
+        branches: [main]
+        paths:
+            - '.github/workflows/metrics.yml'
+
+permissions:
+    contents: write
+
+jobs:
+    metrics:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Generate metrics
+              uses: lowlighter/metrics@latest
+              with:
+                  # Output committed to the repo and referenced from README.md
+                  filename: metrics.svg
+
+                  # PAT with read:user, repo, read:org scopes
+                  # → see SETUP section in this workflow's commit message
+                  token: ${{ secrets.METRICS_TOKEN }}
+
+                  user: ritochabalala
+
+                  # Count private repo contributions and all-time commits
+                  base: header, activity, community, repositories, metadata
+                  config_timezone: Africa/Johannesburg
+
+                  # Plugins
+                  plugin_languages: yes
+                  plugin_languages_ignored: html, css, scss, dockerfile
+                  plugin_languages_details: percentage, bytes-size
+                  plugin_languages_limit: 8
+
+                  plugin_isocalendar: yes
+                  plugin_isocalendar_duration: full-year
+
+                  plugin_followup: yes
+                  plugin_followup_sections: repositories
+
+                  plugin_topics: yes
+                  plugin_topics_mode: icons
+                  plugin_topics_limit: 12
+
+                  plugin_lines: yes
+                  plugin_lines_history_limit: 1
+
+                  # Visual polish
+                  config_padding: 0, 8 + 11%
