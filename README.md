@@ -91,7 +91,7 @@ I design, build, and deploy **AI-driven full-stack solutions** in enterprise env
 
 ## 📊 GitHub
 
-![Rito's GitHub stats](https://github-readme-stats.vercel.app/api?username=ritochabalala&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&theme=default)
+![Rito's GitHub stats](https://github-readme-stats.vercel.app/api?username=ritochabalala&show_icons=true&hide_border=true&theme=default)
 ![Top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ritochabalala&layout=compact&hide_border=true&theme=default)
 
 ---
