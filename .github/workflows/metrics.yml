@@ -3,17 +3,18 @@ name: Generate profile metrics
 on:
     # Run nightly so the SVG stays fresh
     schedule:
-        - cron: '0 2 * * *'
+        - cron: "0 2 * * *"
     # Allow manual trigger from the Actions tab
     workflow_dispatch:
     # Re-render on changes to this workflow file
     push:
         branches: [main]
         paths:
-            - '.github/workflows/metrics.yml'
+            - ".github/workflows/metrics.yml"
 
 permissions:
     contents: write
+    pull-requests: write
 
 jobs:
     metrics:
@@ -28,6 +29,14 @@ jobs:
                   # PAT with read:user, repo, read:org scopes
                   # → see SETUP section in this workflow's commit message
                   token: ${{ secrets.METRICS_TOKEN }}
+
+                  # `main` is protected by a ruleset that requires changes to go
+                  # through a pull request, so push the render to a dedicated
+                  # branch and open an auto-merging PR instead of committing
+                  # directly.
+                  committer_token: ${{ secrets.METRICS_TOKEN }}
+                  committer_branch: metrics-render
+                  output_action: pull-request-squash
 
                   user: ritochabalala
 
