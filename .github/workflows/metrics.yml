@@ -30,12 +30,11 @@ jobs:
                   # → see SETUP section in this workflow's commit message
                   token: ${{ secrets.METRICS_TOKEN }}
 
-                  # `main` is protected by a ruleset that requires changes to go
-                  # through a pull request, so push the render to a dedicated
-                  # branch and open an auto-merging PR instead of committing
-                  # directly.
+                  # `main` is protected by a ruleset that requires changes to
+                  # go through a pull request. The action pushes each render to
+                  # an ephemeral `metrics-run-<id>` head branch and opens an
+                  # auto-merging squash PR against `committer_branch` (main).
                   committer_token: ${{ secrets.METRICS_TOKEN }}
-                  committer_branch: metrics-render
                   output_action: pull-request-squash
 
                   user: ritochabalala
