@@ -89,14 +89,6 @@ I design, build, and deploy **AI-driven full-stack solutions** in enterprise env
 
 ---
 
-## 📊 GitHub
-
-![Rito's GitHub metrics](./metrics.svg)
-
-> Generated nightly by [`lowlighter/metrics`](https://github.com/lowlighter/metrics) — includes private contributions and all-time commits.
-
----
-
 ## 📫 Let's connect
 
 [![Portfolio](https://img.shields.io/badge/-Portfolio-0A0A0A?style=flat&logo=googlechrome&logoColor=white)](https://ritochabalala.github.io)
